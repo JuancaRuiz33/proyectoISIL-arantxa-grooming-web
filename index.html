@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARANTXA GROOMING</title>
+  <link rel="stylesheet" href="estilo/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <!------HEADER------->
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/logoDog.png" alt="ARANTXA GROOMING" />
+      <span class="nomlogo">ARANTXA GROOMING</span>
+    </a>
+  </div>
+
+  <nav class="nav" id="nav-menu">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> INICIO</a></li>
+      <li><a href="servicio.html"><i class="fas fa-dog"></i> SERVICIOS</a></li>
+      <li><a href="nosotros.html"><i class="fas fa-users"></i> NOSOTROS</a></li>
+      <li><a href="contacto.html"><i class="fas fa-envelope"></i> CONTACTO</a></li>
+    </ul>
+  </nav>
+
+  <div class="cta-container">
+    <a href="#" class="boton-cita" data-bs-toggle="modal" data-bs-target="#modalCita" data-tooltip="Agendar cita">
+      <i class="fas fa-calendar-alt"></i>
+      <span class="texto">AGENDA TU CITA</span>
+    </a>
+  </div>
+
+  <div class="mobile-actions">
+    <a href="#" class="mobile-cita" data-bs-toggle="modal" data-bs-target="#modalCita">
+      <i class="fas fa-calendar-alt"></i>
+    </a>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+  <!--=========================MODAL FORMULARIO===================================-->
+  <div class="modal fade" id="modalCita" tabindex="-1" aria-labelledby="modalCitaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content overflow-hidden">
+      <div class="row g-0">
+
+        <!-- LADO IZQUIERDO -->
+        <div class="col-md-5 bg-white p-4 d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="fw-bold text-danger">¡Agenda una cita!</h4>
+            <p class="text-muted">Completa el formulario para atender a tu engreído con amor.</p>
+            <p><i class="fas fa-map-marker-alt text-danger"></i> Los Lirios 131-133, San Martin de Porres</p>
+            <p><i class="fas fa-envelope text-danger"></i> arantxacalderonbellina@gmail.com</p>
+            <p><i class="fas fa-phone-alt text-danger"></i> +51 989841154</p>
+          </div>
+          <div>
+            <p class="mt-2">Síguenos:</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-danger rounded-circle"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="btn btn-danger rounded-circle"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LADO DERECHO -->
+        <div class="col-md-7 bg-danger p-4 text-white">
+          <h4 class="fw-bold mb-3">Formulario de cita</h4>
+
+          <form id="formCita" novalidate>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Nombre del dueño" name="dueno" required>
+              <div class="text-warning small d-none">Campo obligatorio.</div>
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Nombre de tu mascota" name="mascota" required>
+              <div class="text-warning small d-none">Campo obligatorio.</div>
+            </div>
+            <div class="mb-2">
+              <select class="form-control" name="servicio" required>
+                <option value="" disabled selected>Servicio deseado</option>
+                <option>Baño completo</option>
+                <option>Corte de pelo</option>
+                <option>Spa + Baño</option>
+              </select>
+              <div class="text-warning small d-none">Selecciona un servicio.</div>
+            </div>
+            <div class="mb-2">
+              <input type="date" class="form-control" name="fecha" required>
+              <div class="text-warning small d-none">Selecciona una fecha.</div>
+            </div>
+            <div class="mb-2">
+              <input type="time" class="form-control" name="hora" required>
+              <div class="text-warning small d-none">Selecciona una hora.</div>
+            </div>
+            <div class="mb-2">
+              <input type="tel" class="form-control" placeholder="Teléfono de contacto" name="telefono" required>
+              <div class="text-warning small d-none">Campo obligatorio.</div>
+            </div>
+            <div class="mb-2">
+              <textarea class="form-control" rows="2" placeholder="Observaciones (opcional)" name="mensaje"></textarea>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-light fw-bold">Agendar cita</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: GRACIAS -->
+<div class="modal fade" id="modalGracias" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4 class="text-success fw-bold">¡Gracias por tu preferencia!</h4>
+      <p>Tu cita fue registrada con éxito.</p>
+      <button class="btn btn-success mt-3" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: ERROR -->
+<div class="modal fade" id="modalError" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h5 class="text-danger fw-bold">Faltan campos por llenar</h5>
+      <p>Por favor completa todos los campos obligatorios.</p>
+      <button class="btn btn-danger mt-3" data-bs-dismiss="modal">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== SECCIÓN SLIDER ========================== -->
+ <section class="slider-container">
+  <div class="slider-caption">
+    <h2>Arantxa Grooming</h2>
+    <p>¡Deja que tu mascota disfrute del mejor cuidado!</p>
+    <button class="btn-reserva" onclick="location.href='contacto.html'">RESERVA TU CITA AQUÍ</button>
+  </div>
+
+  <video id="videoSlider" autoplay muted playsinline class="video-bg">
+    <source src="video/19153380-hd_1920_1080_60fps.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- Seccion: Porque elegirnos? -->
+  <section class="razon-porque">
+    <div class="razon">
+      <h2>¿POR QUÉ ELEGIRNOS?</h2>
+      <p>Porque aquí trataremos a tu mascota con amor, cuidado y mucha paciencia.</p>
+      <p>Les damos su momento de relajo, los dejamos limpios, felices y mimados.</p>
+      <p>Usamos productos especialmente para su piel y pelaje, y todo en un ambiente tranquilo y seguro.</p>
+      <p>Sabemos cuánto lo quieres, por eso lo cuidamos como tú lo harías.</p>
+    </div>
+  </section>
+<!-- Seccion: Servicios -->
+  <section>
+  <div class="contenedor-servicios">
+    <h1>SERVICIOS</h1>
+
+    <div class="slider-servicios">
+
+      <!-- Tarjeta 1 -->
+      <div class="tarjeta-servicio">
+        <img src="img/bañoperro.jpg" alt="BAÑOS PARA MASCOTAS" class="imagen-tarjeta">
+        <h2>BAÑO PARA MASCOTAS</h2>
+        <p>Baños medicados para el engreído de casa, TU Mascota.</p>
+        <a href="servicio.html" class="boton-servicio">Ver más<span class="flecha">→</span></a>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="tarjeta-servicio">
+        <img src="img/corteperro.jpg" alt="PELUQUERÍA" class="imagen-tarjeta">
+        <h2>PELUQUERÍA</h2>
+        <p>Peluquería canina especializada en higiene, estilo y bienestar.</p>
+        <a href="servicio.html" class="boton-servicio">Ver más<span class="flecha">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!---=============== Testimonios ======================== -->
+<section class="testimonios">
+  <h2 class="titulo-testimonios">¿Qué dicen nuestros clientes de nosotros?</h2>
+
+  <div class="contenedor-interno">
+    <button class="arrow left">&#10094;</button>
+    <button class="arrow right">&#10095;</button>
+
+    <div class="carousel-track" id="carousel">
+      <!-- Testimonios 1 al 8 -->
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar1.avif" alt="Pamela y Goofy" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Pamela y Goofy</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">ARANTXA es nuestra segunda casa. ¡Nos trataron con amor y cuidado!</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar5.jpeg" alt="Doris y Motita" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Doris & Motita</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">Gracias a sus cuidados, Motita tiene su alergia controlada.</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar2.webp" alt="María y Pelusa" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">María & Pelusa</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">¡Pelusa salta de alegría apenas ve la entrada de ARANTXA!</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar3.jpg" alt="Luis y Max" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Luis & Max</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">Max reconoce el lugar y viene feliz. ¡Trato excepcional!</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar6.avif" alt="Carla y Lupo" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Carla & Lupo</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">Lupo nunca estuvo tan limpio. ¡Volveremos sin duda!</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar7.webp" alt="Ernesto y Chispa" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Ernesto & Chispa</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">Me encanta que puedo ver el proceso por cámara en vivo.</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar8.png" alt="Nina y Coco" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Nina & Coco</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">Coco se siente como en casa. ¡Gracias por tanto cariño!</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="contenido">
+          <div class="barra-superior">
+            <figure><img src="img/avatar4.jpg" alt="Jorge y Toby" class="avatar" /></figure>
+          </div>
+          <div class="detalle">
+            <h3 class="nombre">Jorge & Toby</h3>
+            <p class="estrellas">★★★★★</p>
+            <blockquote class="comentario">Toby ama cada visita. ¡Gracias ARANTXA por su amor!</blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dots" id="dots"></nav>
+  </div>
+</section>
+
+<!-- portada de promociones -->
+<section class="banner-total"></section>
+  <div class="promo-banner">
+    <div class="promo-content">
+      <h1>¡OFERTA ESPECIAL!</h1>
+      <p class="big-text">Hasta <span>50%</span> de descuento</p>
+      <p class="details">En cortes, baños y más eventos para tu mascota</p>
+    </div>
+    <div class="promo-img">
+      <img src="img/portada.png" alt="Perro con cartel de descuento">
+    </div>
+  </div>
+  </div>
+</body>
+
+
+<!--------- Seccion: Footer--------- -->
+<footer class="footer-total">
+  <div class="footer-wrapper">
+    <div class="footer-grid">
+
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Volver al inicio">
+          <img src="img/logoDog.png" alt="Logo Arantxa Grooming">
+        </a>
+        <div class="brand-name">Arantxa Grooming</div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Horario de atención<br>(Previa cita)</div>
+        <div class="footer-item">Lun-Vier: 8:00 am – 9:00 pm</div>
+        <div class="footer-item">Sáb-Dom-Feriados: 7:00 am – 10:00 pm</div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Oficina</div>
+        <div class="footer-item">Los Lirios 131 - 133, San Martín de Porres 15103</div>
+        <div class="map-label">Encuéntranos aquí:</div>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.264908230524!2d-77.0706770315095!3d-12.02527481541583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cedc853fa507%3A0xd1d4174ee7346916!2sArantxa%20Grooming%20Spa%20Salon!5e0!3m2!1ses-419!2spe!4v1749962782903!5m2!1ses-419!2spe" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Arantxa Grooming">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Contactos</div>
+        <div class="footer-item"><i class="fa-solid fa-envelope"></i>arantxacalderonbellina@gmail.com</div>
+        <div class="footer-item"><i class="fa-solid fa-phone"></i>+51 989841154</div>
+      </div>
+
+      <div class="footer-col social-col">
+        <div class="footer-title">Redes sociales</div>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/flavita2611/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:arantxacalderonbellina@gmail.com" aria-label="Gmail" data-tooltip="Gmail"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://wa.me/51989841154" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" data-tooltip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.tiktok.com/@arantxagroomingstore" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-tooltip="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+    <div class="footer-wrapper">
+      © 2025 Arantxa Grooming. Todos los derechos reservados. |
+      <a href="/terminos" target="_blank" rel="noopener noreferrer">Términos y condiciones</a> |
+      <a href="/privacidad" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
+    </div>
+</div>
+
+
+  <a class="whatsapp-float" href="https://wa.me/51999999999" target="_blank" title="¡Contáctanos por WhatsApp!">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
